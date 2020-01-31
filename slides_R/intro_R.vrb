@@ -1,0 +1,14 @@
+\frametitle{Paquete \texttt{readr}}
+
+\begin{itemize}
+\item Los datos suelen leerse desde archivos de texto externos.
+\item La funciones principales del paquete \texttt{readr} son:
+\begin{itemize}
+\item \texttt{read\_delim()}, para ficheros separados por un delimitador
+\item \texttt{read\_csv()}, para ficheros separados por comas
+\end{itemize}
+\item Ambos tienen un parámetro que es el nombre del fichero y devuelven un tibble.
+\item Igual que en los scripts, el $fichero$ tiene que estar en el directorio de trabajo o en su defecto escribir la ruta completa.
+\item Para escribir un data.frame o tibble en un fichero de texto se puede usar la función \texttt{write\_csv()}.
+\end{itemize}
+

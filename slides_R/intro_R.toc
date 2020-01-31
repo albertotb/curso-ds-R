@@ -1,0 +1,9 @@
+\beamer@sectionintoc {1}{Introducci\IeC {\'o}n}{4}{0}{1}
+\beamer@sectionintoc {2}{Objetos}{9}{0}{2}
+\beamer@sectionintoc {3}{Estructuras de datos b\IeC {\'a}sicas: vector, array, list}{12}{0}{3}
+\beamer@sectionintoc {4}{Estructuras de datos derivadas: data.frame, factor}{26}{0}{4}
+\beamer@sectionintoc {5}{Lectura de datos}{36}{0}{5}
+\beamer@sectionintoc {6}{Sentencias de control}{40}{0}{6}
+\beamer@sectionintoc {7}{Funciones}{42}{0}{7}
+\beamer@sectionintoc {8}{Gr\IeC {\'a}ficos}{48}{0}{8}
+\beamer@sectionintoc {9}{Paquetes}{57}{0}{9}

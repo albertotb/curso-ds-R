@@ -1,0 +1,10 @@
+\beamer@sectionintoc {1}{Introducci\IeC {\'o}n}{3}{0}{1}
+\beamer@sectionintoc {2}{Preproceso de datos}{16}{0}{2}
+\beamer@sectionintoc {3}{Modelos lineales b\IeC {\'a}sicos}{29}{0}{3}
+\beamer@subsectionintoc {3}{1}{Regresi\IeC {\'o}n lineal}{30}{0}{3}
+\beamer@subsectionintoc {3}{2}{Regresi\IeC {\'o}n log\IeC {\'\i }stica}{48}{0}{3}
+\beamer@sectionintoc {4}{Extensiones}{53}{0}{4}
+\beamer@subsectionintoc {4}{1}{Modelos lineales generalizados (GLM)}{54}{0}{4}
+\beamer@subsectionintoc {4}{2}{Regularizaci\IeC {\'o}n}{58}{0}{4}
+\beamer@subsectionintoc {4}{3}{Modelos aditivos generalizados (GAM)}{64}{0}{4}
+\beamer@sectionintoc {5}{An\IeC {\'a}lisis de resultados}{67}{0}{5}
