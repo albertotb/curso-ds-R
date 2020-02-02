@@ -30,7 +30,7 @@
    * Repaso de los principales gráficos de visualización de datos.
    * Librería ggplot2 en R.
 
-4. Introducción práctica al Machine Learning y R
+4. Introducción práctica al Machine Learning y R [[presentacion]](./pdf/intro_ml.pdf)
 
    * ¿Qué es Machine Learning?
    * Aprendizaje Supervisado vs Aprendizaje no Supervisado.
