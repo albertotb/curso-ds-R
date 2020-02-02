@@ -1,5 +1,7 @@
 # Data Science en R
 
+## Temario
+
 1. Introducción y Conceptos básicos [[presentación]](./pdf/intro_ds.pdf)
    
    * ¿Qué es Data Science?
@@ -37,3 +39,13 @@
    * Ejercicio práctico con Árboles de Decisión
    * Definición básica de técnicas Aprendizaje no Supervisado.
    * Ejercicio práctico K-means
+
+## Requisitos
+
+   1. Instalar [R (versión 3.6+)](https://cran.rstudio.com/) 
+   2. Instalar [Rstudio](https://rstudio.com/products/rstudio/download/#download)
+   
+## Recursos
+
+   * [Lista de paquetes de R](lista_paquetes.md)
+   * [Esquema aprendizaje supervisado](esquema.md)
