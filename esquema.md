@@ -1,3 +1,5 @@
+## Aprendizaje supervisado 
+ 
  1. Obtener datos
  2. Transformar a formato tabular, con una fila por observación y una columna
     por variable
