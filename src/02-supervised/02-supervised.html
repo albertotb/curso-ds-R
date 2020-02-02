@@ -4,7 +4,7 @@
     <title>Conceptos generales de aprendizaje supervisado</title>
     <meta charset="utf-8" />
     <meta name="author" content="Alberto Torres Barrán" />
-    <meta name="date" content="2019-04-24" />
+    <meta name="date" content="2020-02-02" />
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link rel="stylesheet" href="custom.css" type="text/css" />
   </head>
@@ -15,7 +15,7 @@ class: center, middle, inverse, title-slide
 # Conceptos generales de aprendizaje supervisado
 ## Curso de aprendizaje automático para el INE
 ### Alberto Torres Barrán
-### 2019-04-24
+### 2020-02-02
 
 ---
 
@@ -472,7 +472,7 @@ legend("bottomright",
        lty=1, lwd=1.5, col=c("purple", "blue", "red"), inset=0.04)
 ```
 
-&lt;img src="02-supervised_files/figure-html/unnamed-chunk-2-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="02-supervised_files/figure-html/unnamed-chunk-3-1.png" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -537,7 +537,7 @@ mean(y_test == y_pred)*100
 
 ---
 
-&lt;img src="02-supervised_files/figure-html/unnamed-chunk-4-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="02-supervised_files/figure-html/unnamed-chunk-5-1.png" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -590,15 +590,15 @@ los puntos que te pueden decir algo de valores tan extremos estan lejos: tienes 
 ## Vecinos próximos: dependencia de `\(k\)`
 
 
-&lt;img src="02-supervised_files/figure-html/unnamed-chunk-5-1.png" style="display: block; margin: auto;" /&gt;
-
----
-
 &lt;img src="02-supervised_files/figure-html/unnamed-chunk-6-1.png" style="display: block; margin: auto;" /&gt;
 
 ---
 
 &lt;img src="02-supervised_files/figure-html/unnamed-chunk-7-1.png" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="02-supervised_files/figure-html/unnamed-chunk-8-1.png" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -1174,7 +1174,24 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     }
     deleted = true;
   });
-})();</script>
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
 
 <script>
 (function() {

@@ -512,8 +512,8 @@ mean(y_test == y_pred)*100
 ---
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE, fig.align='center'}
-library(ElemStatLearn)
 require(class)
+
 plot_knn <- function(k) {
   x <- mixture.example$x
   g <- mixture.example$y
@@ -533,6 +533,7 @@ plot_knn <- function(k) {
   box()
 }
 
+load('mixture.example.RData')
 plot_knn(15)
 ```
 

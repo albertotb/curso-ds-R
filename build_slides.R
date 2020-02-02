@@ -1,7 +1,7 @@
 library(pagedown)
 library(tools)
 
-input_dir  <- c("./src")
+input_dir  <- "./src"
 output_dir <- "./pdf"
 
 # 1. Take all .Rmd files from `input_dir`
@@ -17,3 +17,17 @@ for (input in list.files(path = input_dir, pattern = ".Rmd", recursive = TRUE, f
     file.remove(output)
   }
 }
+
+
+for (input in list.files(path = input_dir, pattern = ".tex", recursive = TRUE, full.names = TRUE)) {
+  output <- paste0(file_path_sans_ext(basename(input)), ".pdf")
+  target <- file.path(output_dir, output)
+  
+  if (!file.exists(target)) {
+    texi2pdf(input, clean = TRUE)
+    file.copy(output, output_dir)
+    file.remove(output)
+  }
+}
+
+

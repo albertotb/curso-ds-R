@@ -1,6 +1,6 @@
 # Data Science en R
 
-1. Introducción y Conceptos básicos
+1. Introducción y Conceptos básicos [[presentación]]("./pdf/intro_ds.pdf")
    
    * ¿Qué es Data Science?
    * ¿Qué valor aporta el Data Scientist? Casos de uso.
@@ -8,7 +8,7 @@
    * Pasos para el planteamiento y solución de un problema analítico por parte de un Data Scientist
    * Aprendizaje en R y despliegue de entorno laboratorio
 
-2. ¿Qué es R y cuáles son sus ventajas?
+2. ¿Qué es R y cuáles son sus ventajas? [[presentación]]("./pdf/intro_R.pdf")
 
    * Instalación y Review de Rstudio.
    * Principales librerías de R.
