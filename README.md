@@ -3,7 +3,7 @@
 ## Temario
 
 1. Introducción y Conceptos básicos [[presentación]](./pdf/intro_ds.pdf)
-   
+
    * ¿Qué es Data Science?
    * ¿Qué valor aporta el Data Scientist? Casos de uso.
    * Repaso de las diferentes herramientas para el análisis de datos.
@@ -23,12 +23,16 @@
 
 3. Introducción a la ingenieria de datos
 
-   * Preparación de datos
-   * Lectura de datos
-   * Escritura de datos
+   * Preparación de datos: librería [dplyr](./src/01-tidyverse/01-dplyr.html)
+   * Visualización: librería [ggplot2](./src/01-tidyverse/02-ggplot2.html)
+   * Transformación de datos: libreria [tidyr](./src/01-tidyverse/03-tidyr.html)
+   * Lectura y escritura de datos: librería [readr](./src/01-tidyverse/04-readr.html)
+   * Tipos de datos:
+      * texto, librería [stringr](./src/01-tidyverse/05-stringr.html)
+      * factores, librería [forcats](./src/01-tidyverse/06-forcats.html)
+      * fechas, librería [lubridate](./src/01-tidyverse/07-lubridate.html)
+   * Resumen R base y librería [purrr](./src/01-tidyverse/08-purrr.html)
    * Ejemplos con XML, CSV y JSON
-   * Repaso de los principales gráficos de visualización de datos.
-   * Librería ggplot2 en R.
 
 4. Introducción práctica al Machine Learning y R [[presentacion]](./pdf/intro_ml.pdf)
 
@@ -42,9 +46,9 @@
 
 ## Requisitos
 
-   1. Instalar [R (versión 3.6+)](https://cran.rstudio.com/) 
+   1. Instalar [R (versión 3.6+)](https://cran.rstudio.com/)
    2. Instalar [Rstudio](https://rstudio.com/products/rstudio/download/#download)
-   
+
 ## Recursos
 
    * [Lista de paquetes de R](lista_paquetes.md)
