@@ -1,5 +1,3 @@
-# Data Science en R
-
 ## Temario
 
 1. Introducción y Conceptos básicos [[presentación]](./pdf/intro_ds.pdf)
