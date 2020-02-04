@@ -55,3 +55,4 @@
    * [Lista de paquetes de R](lista_paquetes.md)
    * [Esquema aprendizaje supervisado](esquema.md)
    * [R for Data Science](https://r4ds.had.co.nz/)
+   * [Introducción a dbplyr](https://cran.r-project.org/web/packages/dbplyr/vignettes/dbplyr.html)
