@@ -1,5 +1,4 @@
-Importar y transformar datos
-----------------------------
+## Importar y transformar datos
  * dplyr: filtrar filas, seleccionar columnas, crear nuevas columnas
  * tidyr: transformar data.frames
  * readr: importar datos
@@ -7,17 +6,14 @@ Importar y transformar datos
  * lubridate: fechas
  * forcats: factores
 
- Visualization
- -------------
+## Visualización
  * ggplot2: todo tipo de gráficos
 
- Web scraping
- ------------
-  * request: client HTTP
-  * rvest: procesar ficheros HTML, XML, etc.
+## Web scraping
+ * request: client HTTP
+ * rvest: procesar ficheros HTML, XML, etc.
 
-Herramientas de entrenamiento, validación cruzada, búsqueda de parámetros
--------------------------------------------------------------------------
+## Herramientas de entrenamiento, validación cruzada, búsqueda de parámetros
  * caret: búsqueda de hyper-parametros, validación cruzada, partición train-test
  * mlr: similar a caret
  * rBayesianOptimization: bayesian optimization
@@ -26,8 +22,7 @@ Herramientas de entrenamiento, validación cruzada, búsqueda de parámetros
  * broom: extraer y ordenar info de los modelos
  * fastDummies: crear variables dummy
 
-Modelos
--------
+## Modelos
  * class: knn
  * pls: PLS, PCR
  * leaps: Forward-backward stepwise y best subset
@@ -48,11 +43,6 @@ Modelos
  * NMF: non-negative matrix factorization for recommendations and clustering
  * keras: deep learning
 
-Texto
------
- * word2vec: vectorización, word embeddings, etc.
-
-Datasets
--------
+## Datasets
  * coil20: images of objects taken from various angles
  * snedata: repo with wrappers around many datasets
