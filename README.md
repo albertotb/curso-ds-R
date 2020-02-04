@@ -1,6 +1,7 @@
 ## Temario
 
 1. Introducción y Conceptos básicos [[presentación]](./pdf/intro_ds.pdf)
+
    * ¿Qué es Data Science?
    * ¿Qué valor aporta el Data Scientist? Casos de uso.
    * Repaso de las diferentes herramientas para el análisis de datos.
@@ -9,8 +10,9 @@
 
 
 2. ¿Qué es R y cuáles son sus ventajas? [[presentación]](./pdf/intro_R.pdf)
-   * Instalación y Review de Rstudio.
-   * Principales librerías de R.
+
+   * Instalación y Review de Rstudio
+   * Principales librerías de R
    * Variables y tipos
    * Estructuras de control (Loops / Conditionals)
    * Vectores
@@ -19,7 +21,8 @@
    * Introducción a las funciones
 
 
-3. Introducción a la ingenieria de datos    
+3. Introducción a la ingenieria de datos
+
    * Preparación de datos: librería [dplyr](./src/01-tidyverse/01-dplyr.html)
    * Visualización: librería [ggplot2](./src/01-tidyverse/02-ggplot2.html)
    * Transformación de datos: libreria [tidyr](./src/01-tidyverse/03-tidyr.html)
@@ -33,6 +36,7 @@
 
 
 4. Introducción práctica al Machine Learning y R [[presentacion]](./pdf/intro_ml.pdf)
+
    * ¿Qué es Machine Learning?
    * Aprendizaje Supervisado vs Aprendizaje no Supervisado.
    * Definición básica de técnicas de Aprendizaje Supervisado
