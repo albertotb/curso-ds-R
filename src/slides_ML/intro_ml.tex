@@ -140,27 +140,27 @@ Ejemplos: clustering, reducción de dimensión
 \end{itemize}
 \end{frame}
 
-%\begin{frame}[allowframebreaks]
-%\frametitle{Ejemplo: MNIST}
-%\begin{center}
-%\includegraphics[width=0.85\textwidth]{mnist.png}
-%
-%{\footnotesize \href{http://yann.lecun.com/exdb/mnist/}{Base de datos MNIST}}
-%\end{center}
-%
-%Cada dígito:
-%\begin{itemize}
-%\item se recorta
-%\item se escala para que ocupe exactamente $20 \times 20$ píxeles.
-%\item se centra en un recuadro de $28 \times 28$ píxeles.
-%\end{itemize}
-%Para transformarlo en datos tabulares:
-%\begin{enumerate}
-%\item consideramos cada imágen como una matriz de $28$ filas y $28$ columnas donde se almacenan los valores de 0 (negro) a 255 (blanco) de intensidad de gris.
-%\item convertimos esa matriz un un vector muy largo de $28\times 28=784$ elementos.
-%\item apilamos los vectores de los distintos números uno encima de otro.
-%\end{enumerate}
-%\end{frame}
+\begin{frame}[allowframebreaks]
+\frametitle{Ejemplo: MNIST}
+\begin{center}
+\includegraphics[width=0.85\textwidth]{mnist.png}
+
+{\footnotesize \href{http://yann.lecun.com/exdb/mnist/}{Base de datos MNIST}}
+\end{center}
+
+Cada dígito:
+\begin{itemize}
+\item se recorta
+\item se escala para que ocupe exactamente $20 \times 20$ píxeles.
+\item se centra en un recuadro de $28 \times 28$ píxeles.
+\end{itemize}
+Para transformarlo en datos tabulares:
+\begin{enumerate}
+\item consideramos cada imágen como una matriz de $28$ filas y $28$ columnas donde se almacenan los valores de 0 (negro) a 255 (blanco) de intensidad de gris.
+\item convertimos esa matriz un un vector muy largo de $28\times 28=784$ elementos.
+\item apilamos los vectores de los distintos números uno encima de otro.
+\end{enumerate}
+\end{frame}
 %
 %
 %\begin{frame}
@@ -334,16 +334,16 @@ Días desde 01/01 & Temp. \\
 \end{itemize}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Operaciones con factores}
-  \begin{itemize}
-    \item Función \texttt{cut()}: crea un factor dividiendo en rangos un vector numérico de acuerdo a unos puntos de corte
-    \item Función \texttt{tapply()}: aplica una función a cada uno de los elementos de un vector, dividos en los distintos grupos de un determinado factor.
-    \item Función \texttt{by()}: similar a la anterior, pero el objeto sobre el que se aplica la operación agrupada puede ser un \texttt{data.frame}.
-    \item Función \texttt{aggregate()}: similar a \texttt{tapply()} pero devuelve un \texttt{data.frame} y acepta ``fórmulas''.
-    \item Funciones \texttt{table()}, \texttt{prop.table()}, \texttt{margin.table()} y \texttt{xtabs()}: crear tablas de contingencia a partir de ciertos factores
-  \end{itemize}
-\end{frame}
+%\begin{frame}
+%  \frametitle{Operaciones con factores}
+%  \begin{itemize}
+%    \item Función \texttt{cut()}: crea un factor dividiendo en rangos un vector numérico de acuerdo a unos puntos de corte
+%    \item Función \texttt{tapply()}: aplica una función a cada uno de los elementos de un vector, dividos en los distintos grupos de un determinado factor.
+%    \item Función \texttt{by()}: similar a la anterior, pero el objeto sobre el que se aplica la operación agrupada puede ser un \texttt{data.frame}.
+%    \item Función \texttt{aggregate()}: similar a \texttt{tapply()} pero devuelve un \texttt{data.frame} y acepta ``fórmulas''.
+%    \item Funciones \texttt{table()}, \texttt{prop.table()}, \texttt{margin.table()} y \texttt{xtabs()}: crear tablas de contingencia a partir de ciertos factores
+%  \end{itemize}
+%\end{frame}
 
 
 \begin{frame}
@@ -912,62 +912,250 @@ Vamos a intentar predecir la supervivencia de las víctimas del Titanic a partir
 \end{enumerate}
 \end{frame}
 
-\subsection{Modelos aditivos generalizados (GAM)}
-\begin{frame}
-\frametitle{Modelos aditivos generalizados (GAM)}
-
-\begin{itemize}
-\item Extensión de los GLMs donde la salida depende linealmente de funciones de las variables predictoras:
+%\subsection{Modelos aditivos generalizados (GAM)}
+%\begin{frame}
+%\frametitle{Modelos aditivos generalizados (GAM)}
 %
-$$\Ebb(y) = g^{-1}(f_1(x_1) + f_2(x_2) + f_3(x_3) + ... + f_d(x_d))$$
+%\begin{itemize}
+%\item Extensión de los GLMs donde la salida depende linealmente de funciones de las variables predictoras:
+%%
+%$$\Ebb(y) = g^{-1}(f_1(x_1) + f_2(x_2) + f_3(x_3) + ... + f_d(x_d))$$
+%
+%\item Las funciones pueden ser distintas para cada una de las variables
+%
+%\item Pueden ser paramétricas o funciones generales ``suaves''
+%
+%\item La mayoría de implementaciones modernas restringen las funciones para que sean de la forma
+%
+%$$f_i(x_i) = \sum_{k=1}^{K_i}\beta_{ik}b_{ik}(x_i)$$
+%
+%donde $b_{ik}(x_i)$ son funciones de base
+%
+%\end{itemize}
+%\end{frame}
+%
+%
+%\begin{frame}[fragile]
+%\frametitle{Paquete \texttt{mgcv}}
+%
+%\begin{wideitemize}
+%\item Implementación de GAMs en R, alternativa al clásico paquete \texttt{gam}
+%
+%\item Varias funciones de suavizado posible
+%
+%\item Incluye el grado de ``suavizado'' en el ajuste del modelo (no es necesario especificarlo)
+%
+%\item Incluye múltiples distribuciones (Binomial, Bernoulli, Poisson, etc.)
+%
+%\item Ejemplo:
+%\begin{Verbatim}[commandchars=\\\{\}]
+%   > fit <- gam(mpg \mytilde s(wt), data=mtcars)
+%\end{Verbatim}
+%
+%\end{wideitemize}
+%
+%\end{frame}
+%
+%
+%\begin{frame}
+%\frametitle{Ejercicio}
+%Con los datos de diamantes del ejercicio anterior:
+%\begin{itemize}
+%\item Ajustar un GAM del precio sonbre los quilates
+%\item Comparar el error sobre el conjunto de test con el modelo lineal y con el modelo lineal añadiendo una nueva variable que sea el cuadrado del precio
+%
+%\item Ajustar un modelo Lasso modelizando el precio usando el resto de variables de entrada
+%\item ¿Cuál es el valor del lambda óptimo?
+%\item ¿Qué variables son las más importantes y cuales son innecesarias?
+%\end{itemize}
+%\end{frame}
 
-\item Las funciones pueden ser distintas para cada una de las variables
+\begin{frame}
+\frametitle{Vecinos próximos}
 
-\item Pueden ser paramétricas o funciones generales ``suaves''
-
-\item La mayoría de implementaciones modernas restringen las funciones para que sean de la forma
-
-$$f_i(x_i) = \sum_{k=1}^{K_i}\beta_{ik}b_{ik}(x_i)$$
-
-donde $b_{ik}(x_i)$ son funciones de base
-
+\begin{itemize}
+\item Es uno de los algoritmos más sencillos de clasificación.
+\item Dado un conjunto de datos, simplemente clasifica nuevas observaciones como la clase más frecuente entre las $k$ observaciones más cercanas.
+\item La métrica de distancia más común para calcular la cercanía de las observaciones es la distancia Euclídea:
+$$\text{d}(\mathbf{p}, \mathbf{q}) = \sqrt{\sum_{i=1}^{n}{(q_i-p_i)^2}}$$
+\item El valor de $k$ es un parámetro del modelo, y puede tener mucha influencia en el rendimiento.
 \end{itemize}
 \end{frame}
 
+\begin{frame}
+\frametitle{Ventajas y desventajas}
+Ventajas
+\begin{itemize}
+\item Es un modelo muy simple, de hecho no se construye ningún modelo explicitamente.
+\item Robusto a ruido.
+\item Efectivo si hay muchas muestras de entrenamiento.
+\end{itemize}
+Desventajas
+\begin{itemize}
+\item Cuando queremos predecir nuevos ejemplos, se hace todo el trabajo:
+\begin{enumerate}
+\item Se calculan las distancias de las nuevas observaciones a predecir con el conjunto de entrenamiento.
+\item Se ordenan y escogen las $k$ observaciones más cercanas.
+\item Se predice la nueva observación como la clase mayoritaria en dichas observaciones.
+\end{enumerate}
+\item Hay que elegir el valor de $k$ y una distancia.
+\end{itemize}
+\end{frame}
 
-\begin{frame}[fragile]
-\frametitle{Paquete \texttt{mgcv}}
+\begin{frame}
+\frametitle{Predicción y efecto de $k$}
+\begin{center}
+\includegraphics[height=0.68\textheight]{knn_class.png}
+\vfill
+{\footnotesize Línea continua $k=3$, línea discontinua $k=5$. \href{https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm}{Fuente}}
+\end{center}
+\end{frame}
 
-\begin{wideitemize}
-\item Implementación de GAMs en R, alternativa al clásico paquete \texttt{gam}
+\begin{frame}[allowframebreaks, plain]
+\centering
+\includegraphics[width=0.8\textwidth]{knn1.pdf}
 
-\item Varias funciones de suavizado posible
+\break
 
-\item Incluye el grado de ``suavizado'' en el ajuste del modelo (no es necesario especificarlo)
+\begin{center}
+\includegraphics[width=0.8\textwidth]{knn15.pdf}
+\end{center}
 
-\item Incluye múltiples distribuciones (Binomial, Bernoulli, Poisson, etc.)
+\break
 
-\item Ejemplo:
-\begin{Verbatim}[commandchars=\\\{\}]
-   > fit <- gam(mpg \mytilde s(wt), data=mtcars)
-\end{Verbatim}
+\begin{center}
+\includegraphics[width=0.8\textwidth]{knn50.pdf}
+\end{center}
+\end{frame}
 
-\end{wideitemize}
+\begin{frame}
+\frametitle{Árboles de decisión}
 
+\begin{itemize}
+\item Crea modelos de regresión o clasificación en forma de árbol.
+\item Para construir un árbol, se utiliza el siguiente algoritmo:
+\begin{enumerate}
+\item Elegir la variable que más información proporciona sobre la respuesta.
+\item Particionar el conjunto de datos, de acuerdo a un valor de la variable anterior.
+\item Para cada uno de los dos subconjuntos, repetir el procedimiento.
+\item Paramos cuando ya nos queda una única observación o según un criterio de parada.
+\end{enumerate}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Árboles de decisión: ejemplo}
+\centering
+\includegraphics[height=0.9\textheight]{arbol.pdf}
+\end{frame}
+
+\begin{frame}
+\frametitle{Arboles de decisión: interpretabilidad}
+
+\begin{itemize}
+\item Hasta ahora solo hablamos del error de como medida de calidad de un modelo.
+\item Sin embargo, a veces es también muy importante que el modelo sea fácil de entender e interpretar.
+\item Esta es una de las principales ventajas de los árboles de decisión sobre el resto de modelos.
+\item Otras ventajas son:
+\begin{itemize}
+\item Es capaz de trabajar con variables categóricas sin necesidad de codificación.
+\item Rápido de crear, incluso con muchas observaciones y variables.
+\end{itemize}
+\item La principal desventaja es que es necesario controlar el crecimiento del árbol, ya que son muy propensos al sobreajuste.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Árboles de decisión vs regresión logística}
+\centering
+\includegraphics[height=0.8\textheight]{arbol_logreg.png}
+\end{frame}
+
+\begin{frame}
+\frametitle{Métodos de conjunto: \textit{bagging}}
+
+\begin{itemize}
+\item La idea de combinar varios modelos es muy natural.
+\item Queremos combinar clasificadores simples y además que tengan diversidad, es decir, que no aprendan todos lo mismo.
+\item La diversidad la podemos introducir entrenando cada clasificador con una pequeña variación del conjunto de entrenamiento.
+\item Dado un conjunto de entrenamiento, \textit{bagging} crea $m$ nuevos del mismo tamaño mediante muestreo uniforme con reemplazamiento.
+\item Se puede ver que cada uno de estos $m$ conjuntos tiene un 63\% de muestras no repetidas.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Métodos de conjunto: ejemplo}
+
+\centering
+\includegraphics[height=0.85\textheight]{Ozone.png}
+\end{frame}
+
+\begin{frame}
+\frametitle{Random Forest}
+
+\begin{itemize}
+\item Random Forest combina los árboles de decisión con la técnica de \texttt{bagging} para generar un conjunto de modelos.
+\item Para cada uno de las particiones de \textit{bagging}, se entrena un árbol de decisión.
+\item Finalmente se combinan las predicciones de los árboles, por ejemplo con el voto mayoritario.
+\item Con respecto a los árboles de decisión, estos conjuntos:
+\begin{itemize}
+\item Pierden la capacidad interpretativa, aunque son capaces de dar una medida de lo importantes que son las variables.
+\item Mejoran notablemente el error de predicción.
+\item Solucionan el problema de sobreajuste.
+\item Escogen un subconjunto aleatorio de variables en cada partición, para incrementar todavía más la diversidad.
+\end{itemize}
+\end{itemize}
 \end{frame}
 
 
 \begin{frame}
-\frametitle{Ejercicio}
-Con los datos de diamantes del ejercicio anterior:
-\begin{itemize}
-\item Ajustar un GAM del precio sonbre los quilates
-\item Comparar el error sobre el conjunto de test con el modelo lineal y con el modelo lineal añadiendo una nueva variable que sea el cuadrado del precio
+\frametitle{Redes neuronales}
+\centering
+\includegraphics[width=0.85\textwidth]{nn.png}
+\end{frame}
 
-\item Ajustar un modelo Lasso modelizando el precio usando el resto de variables de entrada
-\item ¿Cuál es el valor del lambda óptimo?
-\item ¿Qué variables son las más importantes y cuales son innecesarias?
+\begin{frame}
+\frametitle{Redes neuronales (cont.)}
+
+\begin{itemize}
+\item Inspiradas en el funcionamiento de los sistemas nerviosos biológicos.
+\item Están compuestas de distintas capas, que a su vez están compuestas de neuronas. 
+\item Las neuronas toman unos datos de entrada, los agregan y les aplican una función no lineal, devolviendo una única salida.
+\item Se pueden usar para problemas de regresión y de clasificación modificando ligeramente la capa de salida.
+\item Muy flexibles, se pueden añadir capas si la relación a aproximar es muy compleja.
+\item Cuantas mas capas son necesarios más datos para ajustarlas correctamente.
 \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Representación}
+\begin{itemize}
+\item Las redes neuronales se pueden ver como un modelo en dos pasos:
+\begin{enumerate}
+\item Las capas intermedias crean una nueva ``representación'' de las variables de entrada.
+\item La capa de salida ajusta un modelo líneal simple (regresión lineal, regresión logística). 
+\end{enumerate}
+\item Esta representación interna puede ser útil para entender nuestros datos.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Ejemplo word2vec}
+\begin{wideitemize}
+\item Red neuronal que se entrena con grupos de $n$ palabras con el objetivo de intentar predecir la palabra del medio: \\ \textit{quick brown} \textbf{fox} \textit{jumps over}
+\item Podemos proyectar el resultado de las capas intermedias en 2D.
+
+\item Se ve como la distancia entre palabras representa su parecido en cuanto a significado semántico.
+
+\item Dicha representación es útil para otro tipo de tareas relacionadas con procesamiento de texto: análisis de sentimiento, categorización, etc.
+\end{wideitemize}
+\end{frame}
+
+\begin{frame}[plain]
+\centering
+\includegraphics[scale=0.4]{word2vec.png}
 \end{frame}
 
 
@@ -1023,6 +1211,55 @@ Con los datos de diamantes del ejercicio anterior:
 \end{enumerate}
 \item La primera opción tiene la ventaja de que las variables siguen siendo interpretables, es decir, tienen significado semántico.
 \item El método más común de proyección es PCA o análisis de componentes principales.
+\end{itemize}
+\end{frame}
+
+\section{Datos de gran tamaño}
+
+\begin{frame}
+\frametitle{Datos a gran escala}
+
+\begin{itemize}
+\item Hemos visto que la mayoría de los conjuntos de datos se pueden tratar en un portátil o servidor de gama media--alta.
+\item Sin embargo en ocasiones tenemos conjuntos de datos que:
+\begin{enumerate}
+\item directamente no se pueden cargar en memoria
+\item se pueden cargar pero el proceso de aprendizaje es prohibitivamente lento.
+\end{enumerate}
+\item Lo primero es preguntarse si de verdad hacen falta tantos datos, ya que no todos los problemas de aprendizaje son suficientemente complejos para requerir millones de ejemplos.
+\item Ejemplo: clasificar imágenes de dígitos vs clasificar imágenes de objetos.
+\item Si lo anterior falla, tenemos que recurrir a técnicas y herramientas de computación de alto rendimiento.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Paralelización}
+
+\begin{itemize}
+\item Se refiere a ejecutar un proceso a la vez en múltiples procesadores.
+\item No siempre es posible paralelizar un algoritmo, al menos no de forma fácil.
+\item Existen dos tipos principales que nos interesan:
+\begin{itemize}
+\item A nivel de operaciones: paraleliza la ejecución de las operaciones algebraicas.
+\item A nivel de datos: nuestro problema se puede dividir en tareas independientes, que se pueden ejecutar en varios procesadores a la vez.
+\end{itemize}
+\item En cualquier caso esto no soluciona el problema de la memoria RAM.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Computación distribuida}
+
+\begin{itemize}
+\item Si tenemos disponible un clúster de servidores, podemos intentar aprovecharlos todos para hacer nuestros cálculos.
+\item Esto es trivial si, por ejemplo:
+\begin{enumerate}
+\item Estamos buscando parámetros óptimos.
+\item Estamos haciendo grupos de modelos, como \texttt{randomForest}.
+\item Estamos ajustando un modelo para distintas particiones de entrenamiento y test.
+\end{enumerate}
+\item En otro caso, tenemos que usar herramientas que faciliten el trabajo como Hadoop o Spark.
+\item Hadoop consiste principalmente en un sistema de ficheros distribuido, es decir, los datos se dividen en bloques y se reparten en los nodos, que es donde se realiza el cálculo.
 \end{itemize}
 \end{frame}
 

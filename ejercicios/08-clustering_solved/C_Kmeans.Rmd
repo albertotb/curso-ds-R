@@ -28,7 +28,7 @@ Descarga y explora los datos. Para descargarlos usa este enlace:
 https://drive.google.com/file/d/1jB8Qu1NtF9mfSPpQRmTErNB89-HAxFUx/view?usp=sharing
 ```{r}
 # Load the .csv files
-data = read.csv("uber_data.csv")
+data = read.csv("../../data/uber_data.csv")
 ```
 
 ## K-Means

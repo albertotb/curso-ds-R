@@ -27,7 +27,7 @@ En este ejercicio, entrenaremos un árbol de decisión para predecir la superviv
 Carga el Dataset del Titanic de la carpeta data.
 
 ```{r, message=F}
-data <- read.csv("../06-trees/data/titanic.csv")
+data <- read_csv2("../../data/titanic.csv")
 ```
 
 Explora los datos. ¿Hay alguna variable con valores ausentes?
@@ -40,13 +40,13 @@ summary(data)
 Imputa los NAs de variables continuas con la mediana y de variables categóricas con la moda.
 
 ```{r, message=F}
-data$Age <- sapply(data$Age, FUN=function(x) {ifelse(is.na(x),median(data$Age, na.rm = TRUE),x)})
+data$age <- sapply(data$age, FUN=function(x) {ifelse(is.na(x),median(data$Age, na.rm = TRUE),x)})
 ```
 
 Convierte las variables que sean categóricas a variables tipo factor.
 
 ```{r}
-factor_vars <- c('PassengerId','Pclass','Sex','Embarked','Cabin')
+factor_vars <- c('pclass','sex','embarked','cabin')
 data[factor_vars] <- lapply(data[factor_vars], function(x) as.factor(x))
 ```
 
@@ -65,16 +65,16 @@ test = data[-ind_train, ]
 
 ## Entrenamiento del árbol de decisión
 
-Crea un árbol de decisión usando únicamente las variables Embarked, Cabin Sex y Pclass.
+Crea un árbol de decisión usando únicamente las variables Embarked, Sex y Pclass.
 
 ```{r, message=F}
-fit <- rpart(Survived ~ Pclass + Sex + Embarked + Cabin, train, method = "class", cp=0)
+fit <- rpart(survived ~ pclass + sex + embarked, train, method = "class", cp=0)
 ```
 
 ¿Cuál es su precisión en el conjunto de test?
 ```{r}
 preds = predict(fit, test, type = "class")
-sum(preds == test$Survived)/nrow(test)
+sum(preds == test$survived)/nrow(test)
 ```
 
 Pinta el árbol usando rpart.plot.
@@ -97,6 +97,6 @@ rpart.plot(pfit, type=1, extra = 102)
 
 ```{r}
 preds = predict(pfit, test, type = "class")
-sum(preds == test$Survived)/nrow(test)
+sum(preds == test$survived)/nrow(test)
 ```
 
