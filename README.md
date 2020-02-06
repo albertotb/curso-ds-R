@@ -23,15 +23,15 @@
 
 3. Introducción a la ingenieria de datos
 
-   * Preparación de datos: librería [dplyr](./src/01-tidyverse/01-dplyr.html)
-   * Visualización: librería [ggplot2](./src/01-tidyverse/02-ggplot2.html)
-   * Transformación de datos: libreria [tidyr](./src/01-tidyverse/03-tidyr.html)
-   * Lectura y escritura de datos: librería [readr](./src/01-tidyverse/04-readr.html)
+   * Preparación de datos: librería [dplyr](./src/tidyverse/01-dplyr.html)
+   * Visualización: librería [ggplot2](./src/tidyverse/02-ggplot2.html)
+   * Transformación de datos: libreria [tidyr](./src/tidyverse/03-tidyr.html)
+   * Lectura y escritura de datos: librería [readr](./src/tidyverse/04-readr.html)
    * Tipos de datos:
-       * texto, librería [stringr](./src/01-tidyverse/05-stringr.html)
-       * factores, librería [forcats](./src/01-tidyverse/06-forcats.html)
-       * fechas, librería [lubridate](./src/01-tidyverse/07-lubridate.html)
-   * Resumen R base y librería [purrr](./src/01-tidyverse/08-purrr.html)
+       * texto, librería [stringr](./src/tidyverse/05-stringr.html)
+       * factores, librería [forcats](./src/tidyverse/06-forcats.html)
+       * fechas, librería [lubridate](./src/tidyverse/07-lubridate.html)
+   * Resumen R base y librería [purrr](./src/tidyverse/08-purrr.html)
    * Ejemplos con XML, CSV y JSON
 
 

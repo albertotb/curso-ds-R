@@ -2,10 +2,12 @@ library(jsonlite)
 library(xml2)
 
 
-cadena <- iconv(readLines("./data/Bicimad_Stations_201906.json"), 
-                from = "latin1", to = "UTF8")
+cadena <- iconv(
+            readLines("./data/Bicimad_Stations_201906.json"), 
+            from = "latin1", 
+            to = "UTF8")
 
-data <- fromJSON(str)
+data <- fromJSON(cadena)
 
 
 aloj <- read_xml("./data/alojamientos_v1_es.xml")
